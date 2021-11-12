@@ -1,0 +1,41 @@
+## this mapping is for testing the new transform
+## here the top level is the function and the next level are the param(s)
+
+rename_columns:
+  from_name_to_name:
+    gender_identity: gender
+    race_category: race
+    hispanic_ethnicity: hispanic
+    participant_id: submitter_id
+
+replace_column_values:
+  within_column_from_value_to_value:
+    race:
+      More than one race: Some other race (SPECIFY)
+    gender:
+      Unknown: Not reported
+
+to_quarter:
+  from_date_name_to_quarter_name:
+    date_recruited: quarter_recruited
+
+add_columns_of_constants:
+  column_name_and_value:
+    protocols.submitter_id: main
+    role_in_project: Staff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
