@@ -22,7 +22,7 @@ pip install pandas #or conda install pandas if using conda
 
 ## Notes
 
-As a proof of concept, all markdown files were created/copied at one point in time. However, ultimately, files and data from external sources (e.g., metadata in the JDC or OEPS documentation) will be programmatically extracted from source.
+As a proof of concept, all markdown files were created/copied at one point in time. However, ultimately, files and data from external sources (e.g., metadata in the JDC or OEPS documentation) will be programmatically extracted from source (ie gen3).
 
 Also a work in progress: creating metadata documentation extracted from JDC and most up to date JDC Core Baseline Measures document. Goal here is to make all properties/nodes searchable through documentation. 
 

@@ -10,6 +10,7 @@ import os
 import re
 from io import StringIO
 import hashlib
+import requests
 
 from gen3.auth import Gen3Auth
 from gen3.submission import Gen3Submission
@@ -18,13 +19,10 @@ import numpy as np
 
 from pathlib import Path
 import yaml
-#from jsonpath_ng import parse
+from jsonpath_ng import parse
+import json 
 
 from collections.abc import Iterable
-
-
-# TODO: extract info from Core Measure Document and join to JDC info
-
 
 # get variable categories of core measures
 credentials_path = Path('credentials.json')
@@ -33,60 +31,121 @@ auth = Gen3Auth(refresh_file=credentials_path.as_posix())
 index = Gen3Index(endpoint, auth)
 sub = Gen3Submission(auth)
 
+def get_dictionary(endpoint,node_type):
+    api_url = f"{endpoint}/api/v0/submission/_dictionary/{node_type}"
+    output = requests.get(api_url).text
+    data = json.loads(output)
+    return data
 
-def get_possible_values(df):
+def get_possible_values(prop_name,prop):
+    ''' 
+    get a human-readble description of possible values 
+    -- this will be either be a restricted list of values
+    from the enum parameter or a type of value (eg string)
+    from the type value.
 
-    df = df.copy().fillna('') #replace nans with blank string
-    convert_to_str = lambda x: ','.join([str(y) for y in x]) if type(x) is list else str(x).title()
-    if 'enum' in df and 'type' in df:
-        possible_values = df['enum'].apply(convert_to_str) + df['type'].apply(convert_to_str)
-    elif 'enum' in df:
-        possible_values = df['enum'].apply(convert_to_str)
-    elif 'type' in df:
-        possible_values = df['type'].apply(convert_to_str)
+    for similar gen3 data-portal fxn to form DD table: 
+        see getType fxn in data-portal/src/DataDictionary/utils.js
+    
+    ''' 
+    if 'enum' in prop:
+        #enums are lists -- add to flat list
+        return {prop_name:prop['enum']}
+    elif 'type' in prop:
+        #type is a string
+        return {prop_name:prop['type']}
+    elif 'oneOf' in prop:
+        #get list of types
+        one_of_types = [
+            match.value 
+            for match in parse('$..type').find(prop)
+            if match 
+        ]
+        #get enum and flatten multiple enum lists
+        one_of_enum = [
+            match.value
+            for match in parse('$..enum[*]').find(prop)
+            if match 
+        ]
+        return {prop_name:one_of_enum+one_of_types}
+        
+    elif 'anyOf' in prop:
+        #get the properties json parse object with properties dictionary
+        #note -- for some reason these properties were duplicated (hence the anyOf[0])..not sure why
+        any_of_props = parse("$.anyOf[0]..properties").find(prop)[0].value
+        items = {}
+        for anyof_prop_name,anyof_prop in any_of_props.items():
+            items.update(get_possible_values(f"{prop_name}.{anyof_prop_name}",anyof_prop))
+        return items
     else:
-        raise Exception("BAD POSSIBLE VALUE")
-    return possible_values
+        return {prop_name:["UNDEFINED"]}
 
-def make_human_readable_table(node_name):
 
-    node = sub.get_dictionary_node(node_name)
+def get_description(prop_name,prop):
+    ''' 
+    get human readable description of property. 
 
-    #human readable node-level properties
-    if 'title' in node:
-        node_title = node['title']
+    Descriptions are either added directly to node 
+    property or referenced via __terms or __definition 
+    "hidden" nodes.
+
+    Theoretically, there could be more than one description
+    if in node properties and also in hidden node so this accounts
+    for that scenario by returning all matches from json expression
+    ''' 
+
+    if 'oneOf' in prop:
+        items = {}
+        for prop_name,prop in props['oneOf']:
+            items.update(get_description(prop_name,prop))
+        return items
     else:
-        node_title = node_name.replace('_',' ').title()
+        description_json = parse("$..description").find(prop)
+        descriptions = [match.value for match in description_json if match]
+    
+        if descriptions:
+            return {prop_name:descriptions}
+        else:
+            return {prop_name:["No description"]}
 
-    #variable level details
-    if 'properties' in node:
-        df = pd.DataFrame(node['properties']).T
-        df['node_name'] = node_name
-        df['node_title'] = node_title
-        df['possible_values'] = df.pipe(get_possible_values)
-        # Description of variable (ie property)
-        if 'description' not in df:
-            df['description'] = None
 
-        if 'term' in df:
-            #if there are some properties with a ref to the __term yaml, replace with the term description
-            replace_desc_with_term_desc = lambda x: x['description'] if 'description' in x else ''
-            df['description'].fillna(df['term'].apply(replace_desc_with_term_desc),inplace=True)
 
-        #TODO: Relationship to Core measures document
-        # return pd.DataFrame(data={
-        #     "Variable Category":df['node_title'],
-        #     "JDC Variable Category (or 'node') Name":df['node_name'],
-        #     "JDC Variable Description":df['description'],
-        #     "Possible JDC Variable Values": df['possible_values']
-        # })
-        return df
-    else:
-        return None
-#%%
-make_human_readable_table('participant')
-#%%
-nodes_df = pd.concat(
-    [make_human_readable_table(key) for key,_ in sub.get_dictionary_all().items()]
-)
+#TODO: Relationship to Core measures document
 
+# iterate through the entire dictionary and get possible values and descriptions
+# only if dictionary item is a node (ie has properties)
+dictionary = get_dictionary(endpoint,'_all')
+
+nodes = []
+for node_name,props in dictionary.items():
+    if 'properties' in props:
+        possible_values = {}
+        descriptions = {}
+        for prop_name,prop in props['properties'].items():
+            possible_values.update(get_possible_values(prop_name,prop))
+            descriptions.update(get_description(prop_name,prop))
+        
+        node_df = pd.DataFrame(
+            {'possible_values':possible_values,
+            'descriptions':descriptions}
+        )
+        node_df['node'] = node_name
+        nodes.append(node_df)
+
+        
+
+### get possible values and convert to pd.Series
+### get descriptions and convert ot pd.Series
+### join on property name
+### name series the name of node
+
+# concatenate nodes together for one large data dictionary
+
+
+
+# OEPS
+# get markdown docs from gen3
+
+# JDC Graph Model
+# get node properties from gen3
+# TODO: extract info from Core Measure Document and join to JDC info
