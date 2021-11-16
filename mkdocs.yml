@@ -1,9 +1,48 @@
 #https://www.mkdocs.org/user-guide/configuration/#
-site_name: JCOIN Data Commons
-site_url: https://example.com
+site_name: JCOIN Data Commons Documentation
+site_url: https://jcoin-docs-dev.io
 nav:
   - Home: ./index.md
   - Submission for Hubs: submission.md
+  - JCOIN Variables:
+    - Overview: nodes/README.md
+    - Acknowledgement: nodes/acknowledgement.md
+    - Administration Meta Data: nodes/administration_meta_data.md
+    - Baseline Demographics: nodes/baseline_demographics.md
+    - Center: nodes/center.md
+    #- Core Metadata Collection: nodes/core_metadata_collection.md
+    - Data Release: nodes/data_release.md
+    - Demographic: nodes/demographic.md
+    - Environment: nodes/environment.md
+    - Follow Up: nodes/follow_up.md
+    - Health: nodes/health.md
+    - Implementatition Outcome Measures: nodes/implementation_outcome_measures.md
+    - Justice Involvement Questionnaire: nodes/justice_involvement_questionnaire.md
+    - Keyword: nodes/keyword.md
+    #- GDC JSON schema extension: nodes/metaschema.md
+    - MOUD Lifetime/Past Month Use Questionnaire: nodes/moud_questionnaire.md
+    - Organization: nodes/organization.md
+    - Organizational Climate Stress: nodes/organizational_climate_stress.md
+    - ORGANIZATIONAL READINESS FOR IMPLEMENTING CHANGE (ORIC): nodes/organizational_readiness.md
+    - OUD: nodes/oud.md
+    - Participant: nodes/participant.md
+    - Practitioner: nodes/practitioner.md
+    - Program: nodes/program.md
+    #- Project: nodes/project.md
+    #- Project Metadata: nodes/project_metadata.md
+    - PROMIS: nodes/promis.md
+    - Protocol: nodes/protocol.md
+    - Publication: nodes/publication.md
+    - Recovery: nodes/recovery.md
+    #- Reference File: nodes/reference_file.md
+    - Risk of Harm and Consequences: nodes/risk_of_harm_and_consequences.md
+    #- Root: nodes/root.md
+    - Serious Adverse Event: nodes/serious_adverse_event.md
+    - Staff Attitudes Toward MOUD: nodes/staff_attitudes_toward_moud.md
+    - Substance Use: nodes/substance_use.md
+    - System: nodes/system.md
+    - Treatment Preferences Questionnaire: nodes/treatment_preferences_questionnaire.md
+    - Utilization of Services Questionnaire: nodes/utilization_services_questionnaire.md
   - Opioid Policy Scan:
     - OEPS in the JDC: oeps.md
     - Overview: oeps/README.md

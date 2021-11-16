@@ -6,6 +6,7 @@ this includes the mkdocs.yml config file or making
 actual markdown files
 '''
 import pandas as pd
+import tabulate
 import os
 import re
 from io import StringIO
@@ -24,6 +25,7 @@ import json
 
 from collections.abc import Iterable
 
+import glob
 # get variable categories of core measures
 credentials_path = Path('credentials.json')
 endpoint = 'https://jcoin.datacommons.io'
@@ -92,12 +94,17 @@ def get_description(prop_name,prop):
     Theoretically, there could be more than one description
     if in node properties and also in hidden node so this accounts
     for that scenario by returning all matches from json expression
-    ''' 
 
-    if 'oneOf' in prop:
+    if node is a link, then collect all these descriptions
+    ''' 
+    
+    if 'anyOf' in prop:
+        #get the properties json parse object with properties dictionary
+        #note -- for some reason these properties were duplicated (hence the anyOf[0])..not sure why
+        any_of_props = parse("$.anyOf[0]..properties").find(prop)[0].value
         items = {}
-        for prop_name,prop in props['oneOf']:
-            items.update(get_description(prop_name,prop))
+        for anyof_prop_name,anyof_prop in any_of_props.items():
+            items.update(get_description(f"{prop_name}.{anyof_prop_name}",anyof_prop))
         return items
     else:
         description_json = parse("$..description").find(prop)
@@ -108,44 +115,113 @@ def get_description(prop_name,prop):
         else:
             return {prop_name:["No description"]}
 
-
-
 #TODO: Relationship to Core measures document
 
-# iterate through the entire dictionary and get possible values and descriptions
-# only if dictionary item is a node (ie has properties)
-dictionary = get_dictionary(endpoint,'_all')
+def make_data_dictionary(endpoint,node_list=None):
+    ''' iterate through the entire dictionary and get possible values and descriptions
+    (only if dictionary item is a node (ie has properties)), returning a data dictionary 
+    as a dataframe with node name, property name, property description, and possible values
 
-nodes = []
-for node_name,props in dictionary.items():
-    if 'properties' in props:
-        possible_values = {}
-        descriptions = {}
-        for prop_name,prop in props['properties'].items():
-            possible_values.update(get_possible_values(prop_name,prop))
-            descriptions.update(get_description(prop_name,prop))
-        
-        node_df = pd.DataFrame(
-            {'possible_values':possible_values,
-            'descriptions':descriptions}
+    Can specify a given set of nodes
+    '''
+    dictionary = get_dictionary(endpoint,'_all')
+    nodes = []
+    if not node_list:
+        node_list = dictionary.keys()
+
+    for node_name,props in dictionary.items():
+
+        format_title = lambda x: x.replace("_"," ").title()
+        node_title = props.get('title',format_title(node_name))
+        node_description = props.get('description','No description')
+        system_properties = props.get("systemProperties",[])
+
+        is_in_props = 'properties' in props
+        is_in_node_list = node_name in node_list
+        is_not_system_prop = node_name not in system_properties
+
+        if is_in_props and is_in_node_list and is_not_system_prop:
+            possible_values = {}
+            descriptions = {}
+            for prop_name,prop in props['properties'].items():
+                possible_values.update(get_possible_values(prop_name,prop))
+                descriptions.update(get_description(prop_name,prop))
+                #TODO: return dictioanry instead of df
+            node_properties = pd.DataFrame(
+                {'possible_values':possible_values,
+                'descriptions':descriptions}
+            )
+            # append the overall list with the node info and formmated property tbl
+            ## leaving out dictionary entries without properties            
+            nodes.append({
+                'name':node_name,
+                'title':node_title,
+                'description':node_description,
+                'properties_tbl':node_properties
+            })
+    return nodes 
+
+
+def get_node_list():
+    return yaml.safe_load(open('config.yaml','r'))['nodes']
+
+data_dictionaries = make_data_dictionary(endpoint,get_node_list())
+
+# TODO: make a mkdocs_json and populate OEPS and JCOIN measure pages
+## for minimum viable value - hardcoded json/yaml
+
+# mkdocs_json = {
+#     "site_name": "JCOIN Data Commons",
+#     "site_url": "https://example.com",
+#     "nav":[],
+#     "use_directory_urls": True,
+#     "markdown_extensions": [{"toc": {"permalink": "##"}}],
+#     "plugins":["search","mermaid2"]
+# }
+
+mkdocs_json = {'JCOIN Variables':[]}
+for node in data_dictionaries:
+    
+    dd = node['properties_tbl'] #dd=data_dictionary
+
+    #format data dictionary for html table to be inserted into makrdown file
+    #note, markdown tables were causing issues with special characters so 
+    # decided to just insert the html version of table which seems to be rendering correctly
+    dd_md = (
+        dd[['descriptions','possible_values']]
+        .rename(
+            columns={'descriptions':'Description','possible_values':'Possible Values'}
         )
-        node_df['node'] = node_name
-        nodes.append(node_df)
+        .rename_axis('Variable Name')
+        .applymap(lambda x: '<br>'.join(x) if type(x) is list else x)
+        .applymap(lambda x: x.replace('\n','') if type(x) is str else x)
+        .reset_index()
 
-        
+        # update: explicitly encoding md files as utf-8 allows decoding of these characters
+        #  
+        #the weird quotes are giving a utf-8 encoding error so replacing with regular quotes
+        #alternatively, could put the html codes in for these values &#8220; and &#8221	
+        #.applymap(lambda x: x.replace('“','"').replace("”",'"').replace("–","-") if type(x) is str else x)
+    )
+    # if node['name']=='baseline_demographics':
+    #     test_df = dd_md
+    doc_dir = f"docs/nodes/{node['name']}.md"
+    mkdocs_json['JCOIN Variables'].append({node['title']:doc_dir})
 
-### get possible values and convert to pd.Series
-### get descriptions and convert ot pd.Series
-### join on property name
-### name series the name of node
+    with open(doc_dir,'w',encoding='utf-8') as f:
+        node_description = (
+            f"# {node['title']} Variables\n\n{node['description']}\n\n"
+        )
+        f.write(node_description)
 
-# concatenate nodes together for one large data dictionary
-
-
+        #escape=False to allow <br> tag for table cells --
+        #  may want to allow others to be escaped but need to manually code
+        f.write(dd_md.to_html(escape=False,index=False))
+    
 
 # OEPS
 # get markdown docs from gen3
 
-# JDC Graph Model
-# get node properties from gen3
-# TODO: extract info from Core Measure Document and join to JDC info
+# TODO: extract info from Core Measure Document 
+
+# make the mkdocs.yml file
