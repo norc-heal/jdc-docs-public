@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://jcoin-docs-dev.io/oeps/HomelessPop/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Homeless Population - JCOIN Data Commons Documentation</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<script defer="" src="../../js/jquery-1.10.2.min.js"></script>
+<script defer="" src="../../js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">JCOIN Data Commons Documentation</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="navitem">
+<a class="nav-link" href="../../submission/">Submission for Hubs</a>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">JCOIN Variables <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../nodes/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/acknowledgement/">Acknowledgement</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/administration_meta_data/">Administration Meta Data</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/baseline_demographics/">Baseline Demographics</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/center/">Center</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/data_release/">Data Release</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/demographic/">Demographic</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/environment/">Environment</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/follow_up/">Follow Up</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/health/">Health</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/implementation_outcome_measures/">Implementatition Outcome Measures</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/justice_involvement_questionnaire/">Justice Involvement Questionnaire</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/keyword/">Keyword</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/moud_questionnaire/">MOUD Lifetime/Past Month Use Questionnaire</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/organization/">Organization</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/organizational_climate_stress/">Organizational Climate Stress</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/organizational_readiness/">ORGANIZATIONAL READINESS FOR IMPLEMENTING CHANGE (ORIC)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/oud/">OUD</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/participant/">Participant</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/practitioner/">Practitioner</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/program/">Program</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/promis/">PROMIS</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/protocol/">Protocol</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/publication/">Publication</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/recovery/">Recovery</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/risk_of_harm_and_consequences/">Risk of Harm and Consequences</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/serious_adverse_event/">Serious Adverse Event</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/staff_attitudes_toward_moud/">Staff Attitudes Toward MOUD</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/substance_use/">Substance Use</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/system/">System</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/treatment_preferences_questionnaire/">Treatment Preferences Questionnaire</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../nodes/utilization_services_questionnaire/">Utilization of Services Questionnaire</a>
+</li>
+</ul>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Opioid Policy Scan <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../">OEPS in the JDC</a>
+</li>
+<li>
+<a class="dropdown-item" href="../">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../COVID/">7-day Average Case Count</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Access_FQHCs_MinDistance/">Access to Health Centers</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Acesss_Hospitals_MinDistance/">Access to Hospitals</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Access_MOUDs/">Access to MOUDs</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Access_MentalHealth_MinDistance/">Access to Mental Health Providers</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Access_Pharmacies_MinDistance/">Access to Pharmacies</a>
+</li>
+<li>
+<a class="dropdown-item" href="../COVID/">Adjusted Case Count per 100K</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Age_2018/">Age</a>
+</li>
+<li>
+<a class="dropdown-item" href="../AlcoholOutlets_2018/">Alcohol Outlet Density</a>
+</li>
+<li>
+<a class="dropdown-item" href="../crosswalk/">Crosswalk files</a>
+</li>
+<li>
+<a class="dropdown-item" href="../COVID/">Cumulative Case Count</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Health_DrugDeaths/">Drug-related death rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Other_Demographic_2018/">Educational Attainment</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Job_Categories_byIndustry_2018/">Employment Trends</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Job_Categories_byOccupation_2018/">Essential Worker Jobs</a>
+</li>
+<li>
+<a class="dropdown-item" href="../ForeclosureRate/">Foreclosure Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../GeographicBoundaries_2018/">Geographic Boundaries</a>
+</li>
+<li>
+<a class="dropdown-item" href="../GSL_2018/">Good Samaritan Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../GroupQuar/">Group Quarter</a>
+</li>
+<li>
+<a class="dropdown-item" href="../HepC_rate/">Hepatitis C rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../COVID/">Historical 7-day Average Adjusted Case Count per 100K</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">Homeless Population</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Housing_2018/">Housing Occupancy Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Housing_2018/">Housing Unit Density</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Housing_2018/">Housing Vacancy Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Overlay/">Hypersegregated Cities</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Jail%20variables_2017/">Jail Incarceration Rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Housing_2018/">Long Term Occupancy</a>
+</li>
+<li>
+<a class="dropdown-item" href="../MedExpan_2018/">Medicaid Expansion</a>
+</li>
+<li>
+<a class="dropdown-item" href="../MedExp_2019/">Medicaid Expenditure</a>
+</li>
+<li>
+<a class="dropdown-item" href="../MedMarijLaw/">Medical Marijuana Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Housing_2018/">Mobile Homes</a>
+</li>
+<li>
+<a class="dropdown-item" href="../NAL_2017/">Naloxone Access Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Overlay/">Native American Reservations</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Economic_2018/">Per Capita Income</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Health_PCPs/">Physicians</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Other_Demographic_2018/">Population with a Disability</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Economic_2018/">Poverty Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../PDMP_2017/">Prescription Drug Monitoring Programs (PDMP)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Prison%20variables_2016/">Prison Incarceration Rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Race_Ethnicity_2018/">Race &amp; Ethnicity</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Housing_2018/">Rental Rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Residential_Seg_Indices/">Residential Segregation Indices</a>
+</li>
+<li>
+<a class="dropdown-item" href="../SDOH_2014/">Social Determinants of Health (SDOH)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../SVI_2018/">Social Vulnerability Index (SVI)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Overlay/">Southern Black Belt</a>
+</li>
+<li>
+<a class="dropdown-item" href="../PublicExpenditures/">State &amp; Local Government Expenditures</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Syringe/">Syringe Services Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Economic_2018/">Unemployment Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Rural_Urban_Classification_T_Z/">Urban/Suburban/Rural Classification</a>
+</li>
+<li>
+<a class="dropdown-item" href="../VetPop/">Veteran Population</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Access_OpioidUseTreatment/">Access to Opioid Treatment Programs</a>
+</li>
+<li>
+<a class="dropdown-item" href="../Access_SubstanceUseTreatment/">Access to Substance Use Treatment Facilities</a>
+</li>
+</ul>
+</li>
+<li class="navitem">
+<a class="nav-link" href="../../stigma/">Amerispeak Stigma Survey</a>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../COVID/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../Housing_2018/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<p><strong>Meta Data Name</strong>: Homeless Population<br/>
+<strong>Last Modified</strong>: July 30th, 2021<br/>
+<strong>Author</strong>: Ally Muszynski  </p>
+<h3 id="data-location">Data Location:<a class="headerlink" href="#data-location" title="Permanent link">##</a></h3>
+<p>DS06 - 4 spatial scales. Files can be found <a href="/data_final">here</a>.
+* DS06_T<br/>
+<em> DS06_Z<br/>
+</em> DS06_C<br/>
+* DS06_S  </p>
+<h3 id="data-sources-description">Data Source(s) Description:<a class="headerlink" href="#data-sources-description" title="Permanent link">##</a></h3>
+<p>Variables were obtained from the 2018 Department of Housing and Urban Development Homeless Census, 2018, table DP03 at State, County, Tract and ZIP Code Tabulation Area (ZCTA) level. Raw data and more details can be found at https://www.huduser.gov.</p>
+<h3 id="description-of-data-source-table">Description of Data Source Table:<a class="headerlink" href="#description-of-data-source-table" title="Permanent link">##</a></h3>
+<p>DP03: Annual homeless census point in time and bed count.fields</p>
+<h3 id="description-of-data-processing">Description of Data Processing:<a class="headerlink" href="#description-of-data-processing" title="Permanent link">##</a></h3>
+<p>The following variables were included from the source data:
+1. Homeless shelter bed count
+2. Homeless shelter point in time count
+3. Homeless shelter yearly bed count</p>
+<p>Rates were calculated using group dwelling estimates for homelessness. </p>
+<hr/>
+<ul>
+<li>Percentage for homeless rate was calculated as: <em>estimate for the group / total population</em>, e.g.</li>
+<li><em>% group dwelling  = non-related group dwelling / Total population</em> \</li>
+</ul>
+<h3 id="key-variable-and-definitions">Key Variable and Definitions:<a class="headerlink" href="#key-variable-and-definitions" title="Permanent link">##</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Variable</th>
+<th align="left">Variable ID in .csv</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Bed Count</td>
+<td align="left">BedCt</td>
+<td align="left">Number of beds available to homeless individuals in a continuum of care available at the time of the census</td>
+</tr>
+<tr>
+<td align="left">Point In Time Count</td>
+<td align="left">PITCt</td>
+<td align="left">Number of housing-insecure individuals at a shelter on the day of the count</td>
+</tr>
+<tr>
+<td align="left">Yearly Bed Count</td>
+<td align="left">YrBed</td>
+<td align="left">Number of beds available to homeless populations in group quarters available year-round</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-limitations">Data Limitations:<a class="headerlink" href="#data-limitations" title="Permanent link">##</a></h3>
+<p>This data represents estimates as of the ACS 2018 point in time count. This is the taken by a teams of individuals in a continuum of care in one day. It is difficult to measure homelessness at a local and Federal level as the population is relatively mobile, homelessness can be cyclical and there are visibility issues for the homeless community, so the annual point in time count was used as a proxy for homelessness in this dataset. Data was geocoded then spatially joined at the tract, ZCTA, state and county level to see where continuums of care are located and the availibility of temporary housing solutions.</p>
+<h3 id="commentsnotes">Comments/Notes:<a class="headerlink" href="#commentsnotes" title="Permanent link">##</a></h3>
+<p>Point in time counts were geocoded from addresses provided then spatially joined with different levels of information to give a proxy for homelessness. 
+<a href="https://docs.google.com/presentation/d/1rD77sVr92OaUWKWavb6j5cs0XLdReiKXEEG6fOPShYs/edit?usp=sharing">Here</a> is the methodology for the proxy for homelessness and how data collection is performed.
+<strong>Note on missing data:</strong> Missing and/or unavailable data are coded as NA. </p></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script defer="" src="../../js/base.js"></script>
+<script defer="" src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

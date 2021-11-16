@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <title>JCOIN Data Commons Documentation</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="/js/jquery-1.10.2.min.js" defer></script>
+        <script src="/js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="/.">JCOIN Data Commons Documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="/." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="/submission/" class="nav-link">Submission for Hubs</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">JCOIN Variables <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/nodes/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/acknowledgement/" class="dropdown-item">Acknowledgement</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/administration_meta_data/" class="dropdown-item">Administration Meta Data</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/baseline_demographics/" class="dropdown-item">Baseline Demographics</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/center/" class="dropdown-item">Center</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/data_release/" class="dropdown-item">Data Release</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/demographic/" class="dropdown-item">Demographic</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/environment/" class="dropdown-item">Environment</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/follow_up/" class="dropdown-item">Follow Up</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/health/" class="dropdown-item">Health</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/implementation_outcome_measures/" class="dropdown-item">Implementatition Outcome Measures</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/justice_involvement_questionnaire/" class="dropdown-item">Justice Involvement Questionnaire</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/keyword/" class="dropdown-item">Keyword</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/moud_questionnaire/" class="dropdown-item">MOUD Lifetime/Past Month Use Questionnaire</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/organization/" class="dropdown-item">Organization</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/organizational_climate_stress/" class="dropdown-item">Organizational Climate Stress</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/organizational_readiness/" class="dropdown-item">ORGANIZATIONAL READINESS FOR IMPLEMENTING CHANGE (ORIC)</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/oud/" class="dropdown-item">OUD</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/participant/" class="dropdown-item">Participant</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/practitioner/" class="dropdown-item">Practitioner</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/program/" class="dropdown-item">Program</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/promis/" class="dropdown-item">PROMIS</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/protocol/" class="dropdown-item">Protocol</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/publication/" class="dropdown-item">Publication</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/recovery/" class="dropdown-item">Recovery</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/risk_of_harm_and_consequences/" class="dropdown-item">Risk of Harm and Consequences</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/serious_adverse_event/" class="dropdown-item">Serious Adverse Event</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/staff_attitudes_toward_moud/" class="dropdown-item">Staff Attitudes Toward MOUD</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/substance_use/" class="dropdown-item">Substance Use</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/system/" class="dropdown-item">System</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/treatment_preferences_questionnaire/" class="dropdown-item">Treatment Preferences Questionnaire</a>
+</li>
+                                    
+<li>
+    <a href="/nodes/utilization_services_questionnaire/" class="dropdown-item">Utilization of Services Questionnaire</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Opioid Policy Scan <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/oeps/" class="dropdown-item">OEPS in the JDC</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/COVID/" class="dropdown-item">7-day Average Case Count</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Access_FQHCs_MinDistance/" class="dropdown-item">Access to Health Centers</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Acesss_Hospitals_MinDistance/" class="dropdown-item">Access to Hospitals</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Access_MOUDs/" class="dropdown-item">Access to MOUDs</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Access_MentalHealth_MinDistance/" class="dropdown-item">Access to Mental Health Providers</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Access_Pharmacies_MinDistance/" class="dropdown-item">Access to Pharmacies</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/COVID/" class="dropdown-item">Adjusted Case Count per 100K</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Age_2018/" class="dropdown-item">Age</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/AlcoholOutlets_2018/" class="dropdown-item">Alcohol Outlet Density</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/crosswalk/" class="dropdown-item">Crosswalk files</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/COVID/" class="dropdown-item">Cumulative Case Count</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Health_DrugDeaths/" class="dropdown-item">Drug-related death rate</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Other_Demographic_2018/" class="dropdown-item">Educational Attainment</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Job_Categories_byIndustry_2018/" class="dropdown-item">Employment Trends</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Job_Categories_byOccupation_2018/" class="dropdown-item">Essential Worker Jobs</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/ForeclosureRate/" class="dropdown-item">Foreclosure Rate</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/GeographicBoundaries_2018/" class="dropdown-item">Geographic Boundaries</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/GSL_2018/" class="dropdown-item">Good Samaritan Laws</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/GroupQuar/" class="dropdown-item">Group Quarter</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/HepC_rate/" class="dropdown-item">Hepatitis C rates</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/COVID/" class="dropdown-item">Historical 7-day Average Adjusted Case Count per 100K</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/HomelessPop/" class="dropdown-item">Homeless Population</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Housing_2018/" class="dropdown-item">Housing Occupancy Rate</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Housing_2018/" class="dropdown-item">Housing Unit Density</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Housing_2018/" class="dropdown-item">Housing Vacancy Rate</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Overlay/" class="dropdown-item">Hypersegregated Cities</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Jail%20variables_2017/" class="dropdown-item">Jail Incarceration Rates</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Housing_2018/" class="dropdown-item">Long Term Occupancy</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/MedExpan_2018/" class="dropdown-item">Medicaid Expansion</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/MedExp_2019/" class="dropdown-item">Medicaid Expenditure</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/MedMarijLaw/" class="dropdown-item">Medical Marijuana Laws</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Housing_2018/" class="dropdown-item">Mobile Homes</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/NAL_2017/" class="dropdown-item">Naloxone Access Laws</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Overlay/" class="dropdown-item">Native American Reservations</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Economic_2018/" class="dropdown-item">Per Capita Income</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Health_PCPs/" class="dropdown-item">Physicians</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Other_Demographic_2018/" class="dropdown-item">Population with a Disability</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Economic_2018/" class="dropdown-item">Poverty Rate</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/PDMP_2017/" class="dropdown-item">Prescription Drug Monitoring Programs (PDMP)</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Prison%20variables_2016/" class="dropdown-item">Prison Incarceration Rates</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Race_Ethnicity_2018/" class="dropdown-item">Race & Ethnicity</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Housing_2018/" class="dropdown-item">Rental Rates</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Residential_Seg_Indices/" class="dropdown-item">Residential Segregation Indices</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/SDOH_2014/" class="dropdown-item">Social Determinants of Health (SDOH)</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/SVI_2018/" class="dropdown-item">Social Vulnerability Index (SVI)</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Overlay/" class="dropdown-item">Southern Black Belt</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/PublicExpenditures/" class="dropdown-item">State & Local Government Expenditures</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Syringe/" class="dropdown-item">Syringe Services Laws</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Economic_2018/" class="dropdown-item">Unemployment Rate</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Rural_Urban_Classification_T_Z/" class="dropdown-item">Urban/Suburban/Rural Classification</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/VetPop/" class="dropdown-item">Veteran Population</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Access_OpioidUseTreatment/" class="dropdown-item">Access to Opioid Treatment Programs</a>
+</li>
+                                    
+<li>
+    <a href="/oeps/Access_SubstanceUseTreatment/" class="dropdown-item">Access to Substance Use Treatment Facilities</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="/stigma/" class="nav-link">Amerispeak Stigma Survey</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+    <div class="row-fluid">
+      <div id="main-content" class="span12">
+        <h1 id="404-page-not-found" style="text-align: center">404</h1>
+        <p style="text-align: center"><strong>Page not found</strong></p>
+      </div>
+    </div>
+
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "/",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="/js/base.js" defer></script>
+        <script src="/search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://jcoin-docs-dev.io/nodes/recovery/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Recovery - JCOIN Data Commons Documentation</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<script defer="" src="../../js/jquery-1.10.2.min.js"></script>
+<script defer="" src="../../js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">JCOIN Data Commons Documentation</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="navitem">
+<a class="nav-link" href="../../submission/">Submission for Hubs</a>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">JCOIN Variables <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../acknowledgement/">Acknowledgement</a>
+</li>
+<li>
+<a class="dropdown-item" href="../administration_meta_data/">Administration Meta Data</a>
+</li>
+<li>
+<a class="dropdown-item" href="../baseline_demographics/">Baseline Demographics</a>
+</li>
+<li>
+<a class="dropdown-item" href="../center/">Center</a>
+</li>
+<li>
+<a class="dropdown-item" href="../data_release/">Data Release</a>
+</li>
+<li>
+<a class="dropdown-item" href="../demographic/">Demographic</a>
+</li>
+<li>
+<a class="dropdown-item" href="../environment/">Environment</a>
+</li>
+<li>
+<a class="dropdown-item" href="../follow_up/">Follow Up</a>
+</li>
+<li>
+<a class="dropdown-item" href="../health/">Health</a>
+</li>
+<li>
+<a class="dropdown-item" href="../implementation_outcome_measures/">Implementatition Outcome Measures</a>
+</li>
+<li>
+<a class="dropdown-item" href="../justice_involvement_questionnaire/">Justice Involvement Questionnaire</a>
+</li>
+<li>
+<a class="dropdown-item" href="../keyword/">Keyword</a>
+</li>
+<li>
+<a class="dropdown-item" href="../moud_questionnaire/">MOUD Lifetime/Past Month Use Questionnaire</a>
+</li>
+<li>
+<a class="dropdown-item" href="../organization/">Organization</a>
+</li>
+<li>
+<a class="dropdown-item" href="../organizational_climate_stress/">Organizational Climate Stress</a>
+</li>
+<li>
+<a class="dropdown-item" href="../organizational_readiness/">ORGANIZATIONAL READINESS FOR IMPLEMENTING CHANGE (ORIC)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../oud/">OUD</a>
+</li>
+<li>
+<a class="dropdown-item" href="../participant/">Participant</a>
+</li>
+<li>
+<a class="dropdown-item" href="../practitioner/">Practitioner</a>
+</li>
+<li>
+<a class="dropdown-item" href="../program/">Program</a>
+</li>
+<li>
+<a class="dropdown-item" href="../promis/">PROMIS</a>
+</li>
+<li>
+<a class="dropdown-item" href="../protocol/">Protocol</a>
+</li>
+<li>
+<a class="dropdown-item" href="../publication/">Publication</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">Recovery</a>
+</li>
+<li>
+<a class="dropdown-item" href="../risk_of_harm_and_consequences/">Risk of Harm and Consequences</a>
+</li>
+<li>
+<a class="dropdown-item" href="../serious_adverse_event/">Serious Adverse Event</a>
+</li>
+<li>
+<a class="dropdown-item" href="../staff_attitudes_toward_moud/">Staff Attitudes Toward MOUD</a>
+</li>
+<li>
+<a class="dropdown-item" href="../substance_use/">Substance Use</a>
+</li>
+<li>
+<a class="dropdown-item" href="../system/">System</a>
+</li>
+<li>
+<a class="dropdown-item" href="../treatment_preferences_questionnaire/">Treatment Preferences Questionnaire</a>
+</li>
+<li>
+<a class="dropdown-item" href="../utilization_services_questionnaire/">Utilization of Services Questionnaire</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Opioid Policy Scan <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../../oeps/">OEPS in the JDC</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/">Overview</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/COVID/">7-day Average Case Count</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Access_FQHCs_MinDistance/">Access to Health Centers</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Acesss_Hospitals_MinDistance/">Access to Hospitals</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Access_MOUDs/">Access to MOUDs</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Access_MentalHealth_MinDistance/">Access to Mental Health Providers</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Access_Pharmacies_MinDistance/">Access to Pharmacies</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/COVID/">Adjusted Case Count per 100K</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Age_2018/">Age</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/AlcoholOutlets_2018/">Alcohol Outlet Density</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/crosswalk/">Crosswalk files</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/COVID/">Cumulative Case Count</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Health_DrugDeaths/">Drug-related death rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Other_Demographic_2018/">Educational Attainment</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Job_Categories_byIndustry_2018/">Employment Trends</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Job_Categories_byOccupation_2018/">Essential Worker Jobs</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/ForeclosureRate/">Foreclosure Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/GeographicBoundaries_2018/">Geographic Boundaries</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/GSL_2018/">Good Samaritan Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/GroupQuar/">Group Quarter</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/HepC_rate/">Hepatitis C rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/COVID/">Historical 7-day Average Adjusted Case Count per 100K</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/HomelessPop/">Homeless Population</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Housing_2018/">Housing Occupancy Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Housing_2018/">Housing Unit Density</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Housing_2018/">Housing Vacancy Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Overlay/">Hypersegregated Cities</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Jail%20variables_2017/">Jail Incarceration Rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Housing_2018/">Long Term Occupancy</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/MedExpan_2018/">Medicaid Expansion</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/MedExp_2019/">Medicaid Expenditure</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/MedMarijLaw/">Medical Marijuana Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Housing_2018/">Mobile Homes</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/NAL_2017/">Naloxone Access Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Overlay/">Native American Reservations</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Economic_2018/">Per Capita Income</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Health_PCPs/">Physicians</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Other_Demographic_2018/">Population with a Disability</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Economic_2018/">Poverty Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/PDMP_2017/">Prescription Drug Monitoring Programs (PDMP)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Prison%20variables_2016/">Prison Incarceration Rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Race_Ethnicity_2018/">Race &amp; Ethnicity</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Housing_2018/">Rental Rates</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Residential_Seg_Indices/">Residential Segregation Indices</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/SDOH_2014/">Social Determinants of Health (SDOH)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/SVI_2018/">Social Vulnerability Index (SVI)</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Overlay/">Southern Black Belt</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/PublicExpenditures/">State &amp; Local Government Expenditures</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Syringe/">Syringe Services Laws</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Economic_2018/">Unemployment Rate</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Rural_Urban_Classification_T_Z/">Urban/Suburban/Rural Classification</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/VetPop/">Veteran Population</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Access_OpioidUseTreatment/">Access to Opioid Treatment Programs</a>
+</li>
+<li>
+<a class="dropdown-item" href="../../oeps/Access_SubstanceUseTreatment/">Access to Substance Use Treatment Facilities</a>
+</li>
+</ul>
+</li>
+<li class="navitem">
+<a class="nav-link" href="../../stigma/">Amerispeak Stigma Survey</a>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../publication/" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../risk_of_harm_and_consequences/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#recovery-variables">Recovery Variables</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="recovery-variables">Recovery Variables<a class="headerlink" href="#recovery-variables" title="Permanent link">##</a></h1>
+<p>Genetic Research Center (GRC) or other clinical center at which research participants are recruited.</p>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th>Variable Name</th>
+<th>Description</th>
+<th>Possible Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count_of_post_release_counters_with_access_to_recovery_program_using_admin_data</td>
+<td>tbd</td>
+<td>string</td>
+</tr>
+<tr>
+<td>created_datetime</td>
+<td>A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]</td>
+<td>string<br/>null</td>
+</tr>
+<tr>
+<td>follow_ups.id</td>
+<td>A 128-bit identifier. Depending on the mechanism used to generate it, it is either guaranteed to be different from all other UUIDs/GUIDs generated until 3400 AD or extremely likely to be different. Its relatively small size lends itself well to sorting, ordering, and hashing of all sorts, storing in databases, simple allocation, and ease of programming in general.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>follow_ups.submitter_id</td>
+<td>No description</td>
+<td>string</td>
+</tr>
+<tr>
+<td>id</td>
+<td>A 128-bit identifier. Depending on the mechanism used to generate it, it is either guaranteed to be different from all other UUIDs/GUIDs generated until 3400 AD or extremely likely to be different. Its relatively small size lends itself well to sorting, ordering, and hashing of all sorts, storing in databases, simple allocation, and ease of programming in general.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>peer_navigation_services_using_admin_data</td>
+<td>tbd</td>
+<td>string</td>
+</tr>
+<tr>
+<td>project_id</td>
+<td>Unique ID for any specific defined piece of work that is undertaken or attempted to meet a single requirement.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>recovery_support_service</td>
+<td>tbd</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>relapse</td>
+<td>tbd</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>state</td>
+<td>The current state of the object.</td>
+<td>uploading<br/>uploaded<br/>md5summing<br/>md5summed<br/>validating<br/>error<br/>invalid<br/>suppressed<br/>redacted<br/>live<br/>validated<br/>submitted<br/>released</td>
+</tr>
+<tr>
+<td>submitter_id</td>
+<td>A project-specific identifier for a node. This property is the calling card/nickname/alias for a unit of submission. It can be used in place of the UUID for identifying or recalling a node.</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>No description</td>
+<td>string</td>
+</tr>
+<tr>
+<td>updated_datetime</td>
+<td>A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]</td>
+<td>string<br/>null</td>
+</tr>
+<tr>
+<td>urine_toxicologies</td>
+<td>tbd</td>
+<td>string</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script defer="" src="../../js/base.js"></script>
+<script defer="" src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

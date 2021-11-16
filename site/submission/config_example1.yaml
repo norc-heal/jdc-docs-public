@@ -1,0 +1,27 @@
+datafiles:
+  - id: staff
+    program_name: JCOIN
+    hub_name: TEST
+    data_file_path: <my_folder/example_input_staff.xlsx>
+    variable_categories:
+      - participant
+      - demographic
+    variable_transform_file_path: <my_folder/example_transforms_staff.yaml>
+    outputted_tsv_file_dir: <my_folder/jdc_folder/>
+  - id: client
+    program_name: JCOIN
+    hub_name: TEST
+    data_file_path: <my_folder/example_input_client.csv>
+    variable_categories:
+      - participant
+      - demographic
+    variable_transform_file_path: <my_folder/example_transforms_staff.yaml>
+    outputted_tsv_file_dir: <my_folder/jdc_folder/>
+  - id: client
+    program_name: JCOIN
+    hub_name: TEST
+    data_file_path: <my_folder/example_input_client.csv>
+    variable_categories:
+      - substance_use
+    variable_transform_file_path: <my_folder/example_transforms_staff.yaml>
+    outputted_tsv_file_dir: <my_folder/jdc_folder/>
