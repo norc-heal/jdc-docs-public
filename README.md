@@ -17,12 +17,23 @@ pip install mkdocs-mermaid2-plugin
 pip install gen3
 pip install pandas #or conda install pandas if using conda
 
-
+# jsonpath expressions for simplifying work with gen3 API
+pip install jsonpath_ng
 ```
 
 ## Notes
 
-As a proof of concept, all markdown files were created/copied at one point in time. However, ultimately, files and data from external sources (e.g., metadata in the JDC or OEPS documentation) will be programmatically extracted from source (ie gen3).
+
+Here is a list of things to add/edit for v1:
+
+1. Node property tables
+    - filter out irrelevant variables other than systemProperties variables
+    - if string,integer, or number type -- can be any of that type so add "Any " to the column (eg string --> Any string)
+    - create additional description for parent node properties or note at top
+
+2. Overview of JDC data model/nodes/properties
+    - Diagram of how JDC works
+    - link to JDC graph model
 
 Also a work in progress: creating metadata documentation extracted from JDC and most up to date JDC Core Baseline Measures document. Goal here is to make all properties/nodes searchable through documentation. 
 

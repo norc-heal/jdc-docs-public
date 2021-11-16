@@ -1,5 +1,5 @@
 ''' 
-code to format, copy, or make or append any necessary 
+code to format, copy, pull from JDC gen3 API, or make or append any necessary 
 files for JDC documentation with mkdocs.
 
 this includes the mkdocs.yml config file or making
