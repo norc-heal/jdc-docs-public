@@ -25,7 +25,7 @@ click summary "https://uchicago.box.com/s/k0cu05u3lzyg6ca2owva5qpfqoj5xuwt" "Tak
 
 ## How to map to JDC
 
-Provide descriptions of each column and further process
+Each hub uses their data collection of choice and 
 
 
 ### Example 1 (internal note)
@@ -37,4 +37,28 @@ Provide descriptions of each column and further process
 
 ## How to use the submission tool on JDC
 
+To use the JCOIN website for submission:
 
+```mermaid
+flowchart TB
+
+website[Go to jcoin.data.commons.io/submission or the "submit data" button on the JDC];
+project[Scroll to your project under "List of projects"];
+projectsubmit[Click "submit data" (this should take you to a link)];
+upload[Click "upload file"];
+find[Find the node (ie variable category) file];
+
+website --> project --> projectsubmit --> upload --> find
+
+Do this for each variable category
+
+```
+
+<!-- 
+
+
+
+
+
+
+ -->

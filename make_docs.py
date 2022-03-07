@@ -6,7 +6,6 @@ this includes the mkdocs.yml config file or making
 actual markdown files
 '''
 import pandas as pd
-import tabulate
 import os
 import re
 from io import StringIO
@@ -111,7 +110,7 @@ def get_description(prop_name,prop):
         descriptions = [match.value for match in description_json if match]
     
         if descriptions:
-            return {prop_name:descriptions}
+            return {prop_name:descriptions[0]}
         else:
             return {prop_name:["No description"]}
 
@@ -135,6 +134,7 @@ def make_data_dictionary(endpoint,node_list=None):
         node_title = props.get('title',format_title(node_name))
         node_description = props.get('description','No description')
         system_properties = props.get("systemProperties",[])
+        #links = props.get("links",)
 
         is_in_props = 'properties' in props
         is_in_node_list = node_name in node_list
@@ -165,6 +165,8 @@ def make_data_dictionary(endpoint,node_list=None):
 def get_node_list():
     return yaml.safe_load(open('config.yaml','r'))['nodes']
 
+
+
 data_dictionaries = make_data_dictionary(endpoint,get_node_list())
 
 # TODO: make a mkdocs_json and populate OEPS and JCOIN measure pages
@@ -180,6 +182,7 @@ data_dictionaries = make_data_dictionary(endpoint,get_node_list())
 # }
 
 mkdocs_json = {'JCOIN Variables':[]}
+
 for node in data_dictionaries:
     
     dd = node['properties_tbl'] #dd=data_dictionary
@@ -217,7 +220,60 @@ for node in data_dictionaries:
         #escape=False to allow <br> tag for table cells --
         #  may want to allow others to be escaped but need to manually code
         f.write(dd_md.to_html(escape=False,index=False))
-    
+
+q4_nodes = ['participant','demographic','follow_up','substance_use']
+q4_variables = [
+    #substance use
+    's1',
+    's4',
+    #demographic
+    'd4b',
+    'd2',
+    'o2',
+    'race',
+    'gender',
+    #participant
+    'quarter',
+    'role',
+    #follow up
+    'completed_follow_up',
+    'visit_number',
+    'visit_type',
+    #all nodes
+    #'submitter_id'
+
+]
+q4_regex = '|'.join([f"^{x}" for x in q4_variables])
+
+#%%
+def filter_on_index_regex(df,regex):
+    indices =  [y for y in df.index if re.match(regex,y,re.I)]
+    return df.loc[indices]
+def filter_on_column_list(df,col_name,col_vals):
+    is_in_col = df[col_name].isin(col_vals)
+    return df.loc[is_in_col]
+
+data_dictionary_all = pd.concat([
+    node['properties_tbl'].assign(node_name=node['name'])
+    for node in data_dictionaries
+])
+
+(
+    data_dictionary_all
+    .pipe(filter_on_column_list,'node_name',q4_nodes)
+    .pipe(filter_on_index_regex,q4_regex)
+).to_csv("data_dictionary_q4_v2.csv")
+
+
+#%%
+(
+    pd.concat([x['properties_tbl']
+    .assign(name=x['name'],title=x['title'],descriptions=lambda x:x['descriptions'].apply(lambda x:x[0])) 
+    for x in data_dictionaries])
+    .pipe(lambda x: x.loc[is_in_q4_measures])
+    .to_csv("data_dictionary.csv")
+)
+
 
 # OEPS
 # get markdown docs from gen3
@@ -225,3 +281,17 @@ for node in data_dictionaries:
 # TODO: extract info from Core Measure Document 
 
 # make the mkdocs.yml file
+
+
+# open example file 
+yale_spss = Path(r"C:\Users\kranz-michael\OneDrive - NORC at the University of Chicago\Desktop\TCN+PATHS+Baseline_March+7,+2021_12.18.sav")
+yale_df = pd.read_spss(yale_spss)
+
+
+# Some examples for how to map to JDC
+
+#say you are collecting 
+#Q57 to "d4b"
+#map D4b to d4b
+#dates
+#codes to 

@@ -382,7 +382,7 @@ click summary "https://uchicago.box.com/s/k0cu05u3lzyg6ca2owva5qpfqoj5xuwt" "Tak
 
 </div>
 <h2 id="how-to-map-to-jdc">How to map to JDC<a class="headerlink" href="#how-to-map-to-jdc" title="Permanent link">##</a></h2>
-<p>Provide descriptions of each column and further process</p>
+<p>Each hub uses their data collection of choice and </p>
 <h3 id="example-1-internal-note">Example 1 (internal note)<a class="headerlink" href="#example-1-internal-note" title="Permanent link">##</a></h3>
 <table>
 <thead>
@@ -420,7 +420,52 @@ click summary "https://uchicago.box.com/s/k0cu05u3lzyg6ca2owva5qpfqoj5xuwt" "Tak
 </tr>
 </tbody>
 </table>
-<h2 id="how-to-use-the-submission-tool-on-jdc">How to use the submission tool on JDC<a class="headerlink" href="#how-to-use-the-submission-tool-on-jdc" title="Permanent link">##</a></h2></div>
+<h2 id="how-to-use-the-submission-tool-on-jdc">How to use the submission tool on JDC<a class="headerlink" href="#how-to-use-the-submission-tool-on-jdc" title="Permanent link">##</a></h2>
+<p>To use the JCOIN website for submission:</p>
+<div class="mermaid">flowchart TB
+
+website[Go to jcoin.data.commons.io/submission or the "submit data" button on the JDC];
+project[Scroll to your project under "List of projects"];
+projectsubmit[Click "submit data" (this should take you to a link)];
+upload[Click "upload file"];
+find[Find the node (ie variable category) file];
+
+website --&gt; project --&gt; projectsubmit --&gt; upload --&gt; find
+
+Do this for each variable category
+
+</div>
+<div class="mermaid">flowchart TB
+
+decision_data_download[Is there a way to programmatically download data via an API or web scraping?];
+data_download_manual[(NORC) Download data manually and move to directory with associated subdirectories];
+data_download_auto[(NORC) Run code that creates and/or downloads all study files (API or from url if webscraping)];
+data_upload[(NORC) Upload to AWS s3 bucket on heal external data using aws command line tool ]
+data_index[(CTDS) Run indexd on heal external to assign object ids to the new files];
+
+is_adapter[Is there a metadata adapter?]
+is_adapter_config[In the configuration file, is there a correct set of mappings that currently uses that adapter?]
+
+get_api_mappings[Get correct mappings for set of studies to configuration file through researching API]
+make_api_mappings[Run code that adds additional studies of study API --&gt; heal mappings and transformations for metadata and individual file properties]
+
+copy_config[Copy the new entries to the existing aggregate_configuration.json file (currently manually done to ensure it is easy to see revisions)]
+
+
+pr_qa[Pull Request to HEAL QA]
+pr_preprod[Pull Request to HEAL PREPROD]
+pr_prod[Pull Request to HEAL PROD]
+
+
+decision_data_download -- yes --&gt; data_download_auto --&gt; data_index
+decision_data_download -- no --&gt; data_download_manual --&gt; data_index
+
+data_index --&gt; is_adapter -- yes --&gt; is_adapter_config --&gt; make_api_mappings
+data_index --&gt; is_adapter -- no --&gt; get_api_mappings --&gt; make_api_mappings
+
+make_api_mappings --&gt; copy_config -- to QA repository --&gt; pr_qa -- copy to PREPROD --&gt; pr_preprod --&gt; copy to PROD --&gt; pr_prod
+
+</div></div>
 </div>
 </div>
 <footer class="col-md-12">
