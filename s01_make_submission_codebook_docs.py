@@ -77,7 +77,7 @@ def add_type(field):
 
 #note
 def add_note(field):
-    note_exp = Fields('custom').child(Fields('note'))
+    note_exp = Fields('custom').child(Fields('notes'))
     note = note_exp.find(field)
     if note:
         return note[0].value
@@ -97,39 +97,55 @@ def add_core_measure_question(field):
     else:
         return ''
 
+def add_required(field):
+    req_exp = Fields("constraints").child(Fields('required'))
+    req = req_exp.find(field)
+    if req:
+        return 'Yes' 
+    else:
+        return ''
 #make an ordered dict of mappings
-field_md_template = ''' 
+# field_md_template = ''' 
 
---------------------------------------------
-{title}
- |               |                          |
------------------ | --------------------------
-|**Variable name** | `{variable_name}`|
-|**JCOIN Core Measure Question Text** | {question} |
-|**Description:** | {description} |
-|**Variable type** | {type}|
-|**Possible values** | {enums}|
-'''
+# --------------------------------------------
+# {title}
+#  |               |                          |
+# ----------------- | --------------------------
+# |**Variable name** | `{variable_name}`|
+# |**JCOIN Core Measure Question Text** | {question} |
+# |**Description:** | {description} |
+# |**Variable type** | {type}|
+# |**Possible values** | {enums}|
+# '''
 def make_field_md(field):
-    field_md = field_md_template.format(
-        title=add_title(field),
-        question=add_core_measure_question(field),
-        core_measure=add_core_measure(field),
-        description=add_description(field),
-        variable_name=add_variable_name(field),
-        enums=add_enums(field),
-        type=add_type(field),
-    )
-    notes = add_note(field)
+    # field_md = field_md_template.format(
+    #     title=add_title(field),
+    #     question=add_core_measure_question(field),
+    #     core_measure=add_core_measure(field),
+    #     description=add_description(field),
+    #     variable_name=add_variable_name(field),
+    #     enums=add_enums(field),
+    #     type=add_type(field),
+    # )
 
-    if notes:
-        field_md+=f"**Notes | {notes}"
+    field_list = [
+        ("","---------"), #field divider
+        ("",add_title(field)),
+        ("**Variable name:**",f"```{add_variable_name(field)}```"),
+       ("**JCOIN Core Measure Question Text:**", add_core_measure_question(field)),
+        ("**Description:**",add_description(field)),
+        ("**Variable type:**",add_type(field)),
+        ("**Possible values:**",add_enums(field)),
+        ("**Required:**",add_required(field)),
+        ("**Notes:**",add_note(field))
+    ]
+
     
-    return field_md
+    return "\n\n".join([prop_name+" "+prop for prop_name,prop in field_list if prop])
 
 section_md_template = '''
 ----------
-## **{section}**
+## **{section} Fields**
 ----------
 '''
 def get_section(field,first_level='custom',second_level='jcoin:core_measure_section'):
@@ -155,12 +171,14 @@ for schema in schemas:
 
         field_md_list.append(make_field_md(field))
         
-    fields_mds = '\n\n'.join(field_md_list)
+    fields_mds = '\n'.join(field_md_list)
+
+    #schema/dataset/file level 
     schema_description = schema.get('description','No description')
     schema_file_name = schema_description.split(":")[0].lower().replace(" ","_")
     overall_md = f"# {schema_description}"
-    overall_md+=fields_mds
-    with open(f"docs/submission/{schema_file_name}.md",'w') as f:
+    overall_md+=fields_mds #add field markdowns to schema dataset/file level
+    with open(f"docs/submission/{schema_file_name}.md",'w',encoding='utf-8') as f:
         f.write(overall_md)
 
 

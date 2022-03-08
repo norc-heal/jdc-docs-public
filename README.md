@@ -19,6 +19,13 @@ pip install pandas #or conda install pandas if using conda
 
 # jsonpath expressions for simplifying work with gen3 API
 pip install jsonpath_ng
+
+# install pdf creation plugin
+There are a few packages available such as mkdocs-with-pdf
+On Windows, both give the error:
+```cannot load library 'gobject-2.0-0': error 0x7e.  Additionally, ctypes.util.find_library() did not manage to locate a library called 'gobject-2.0-0'```
+
+
 ```
 
 ## Notes

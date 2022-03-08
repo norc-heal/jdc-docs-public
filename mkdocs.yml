@@ -6,64 +6,64 @@ nav:
   - Submission Procedures: 
     - Procedures: submission.md
     - Baseline Measure Fields: submission/baseline_fields.md
-    - Follow up measures (i.e., all time points) Fields: submission/all_time_point_fields.md
-  - Opioid Policy Scan:
-    - OEPS in the JDC: oeps.md
-    - Overview: oeps/README.md
-    - 7-day Average Case Count: oeps/COVID.md
-    - Access to Health Centers: oeps/Access_FQHCs_MinDistance.md
-    - Access to Hospitals: oeps/Acesss_Hospitals_MinDistance.md
-    - Access to MOUDs: oeps/Access_MOUDs.md
-    - Access to Mental Health Providers: oeps/Access_MentalHealth_MinDistance.md
-    - Access to Pharmacies: oeps/Access_Pharmacies_MinDistance.md
-    - Adjusted Case Count per 100K: oeps/COVID.md
-    - Age: oeps/Age_2018.md
-    - Alcohol Outlet Density: oeps/AlcoholOutlets_2018.md
-    - Crosswalk files: oeps/crosswalk.md
-    - Cumulative Case Count: oeps/COVID.md
-    - Drug-related death rate: oeps/Health_DrugDeaths.md
-    - Educational Attainment: oeps/Other_Demographic_2018.md
-    - Employment Trends: oeps/Job_Categories_byIndustry_2018.md
-    - Essential Worker Jobs: oeps/Job_Categories_byOccupation_2018.md
-    - Foreclosure Rate: oeps/ForeclosureRate.md
-    - Geographic Boundaries: oeps/GeographicBoundaries_2018.md
-    - Good Samaritan Laws: oeps/GSL_2018.md
-    - Group Quarter: oeps/GroupQuar.md
-    - Hepatitis C rates: oeps/HepC_rate.md
-    - Historical 7-day Average Adjusted Case Count per 100K: oeps/COVID.md
-    - Homeless Population: oeps/HomelessPop.md
-    - Housing Occupancy Rate: oeps/Housing_2018.md
-    - Housing Unit Density: oeps/Housing_2018.md
-    - Housing Vacancy Rate: oeps/Housing_2018.md
-    - Hypersegregated Cities: oeps/Overlay.md
-    - Jail Incarceration Rates: oeps/Jail variables_2017.md
-    - Long Term Occupancy: oeps/Housing_2018.md
-    - Medicaid Expansion: oeps/MedExpan_2018.md
-    - Medicaid Expenditure: oeps/MedExp_2019.md
-    - Medical Marijuana Laws: oeps/MedMarijLaw.md
-    - Mobile Homes: oeps/Housing_2018.md
-    - Naloxone Access Laws: oeps/NAL_2017.md
-    - Native American Reservations: oeps/Overlay.md
-    - Per Capita Income: oeps/Economic_2018.md
-    - Physicians: oeps/Health_PCPs.md
-    - Population with a Disability: oeps/Other_Demographic_2018.md
-    - Poverty Rate: oeps/Economic_2018.md
-    - Prescription Drug Monitoring Programs (PDMP): oeps/PDMP_2017.md
-    - Prison Incarceration Rates: oeps/Prison variables_2016.md
-    - Race & Ethnicity: oeps/Race_Ethnicity_2018.md
-    - Rental Rates: oeps/Housing_2018.md
-    - Residential Segregation Indices: oeps/Residential_Seg_Indices.md
-    - Social Determinants of Health (SDOH): oeps/SDOH_2014.md
-    - Social Vulnerability Index (SVI): oeps/SVI_2018.md
-    - Southern Black Belt: oeps/Overlay.md
-    - State & Local Government Expenditures: oeps/PublicExpenditures.md
-    - Syringe Services Laws: oeps/Syringe.md
-    - Unemployment Rate: oeps/Economic_2018.md
-    - Urban/Suburban/Rural Classification: oeps/Rural_Urban_Classification_T_Z.md
-    - Veteran Population: oeps/VetPop.md
-    - Access to Opioid Treatment Programs: oeps/Access_OpioidUseTreatment.md
-    - Access to Substance Use Treatment Facilities: oeps/Access_SubstanceUseTreatment.md
-  - Amerispeak Stigma Survey: stigma.md
+    - Follow up measures (i.e., all time points) Fields: submission/time_point_fields.md
+  # - Opioid Policy Scan:
+  #   - OEPS in the JDC: oeps.md
+  #   - Overview: oeps/README.md
+  #   - 7-day Average Case Count: oeps/COVID.md
+  #   - Access to Health Centers: oeps/Access_FQHCs_MinDistance.md
+  #   - Access to Hospitals: oeps/Acesss_Hospitals_MinDistance.md
+  #   - Access to MOUDs: oeps/Access_MOUDs.md
+  #   - Access to Mental Health Providers: oeps/Access_MentalHealth_MinDistance.md
+  #   - Access to Pharmacies: oeps/Access_Pharmacies_MinDistance.md
+  #   - Adjusted Case Count per 100K: oeps/COVID.md
+  #   - Age: oeps/Age_2018.md
+  #   - Alcohol Outlet Density: oeps/AlcoholOutlets_2018.md
+  #   - Crosswalk files: oeps/crosswalk.md
+  #   - Cumulative Case Count: oeps/COVID.md
+  #   - Drug-related death rate: oeps/Health_DrugDeaths.md
+  #   - Educational Attainment: oeps/Other_Demographic_2018.md
+  #   - Employment Trends: oeps/Job_Categories_byIndustry_2018.md
+  #   - Essential Worker Jobs: oeps/Job_Categories_byOccupation_2018.md
+  #   - Foreclosure Rate: oeps/ForeclosureRate.md
+  #   - Geographic Boundaries: oeps/GeographicBoundaries_2018.md
+  #   - Good Samaritan Laws: oeps/GSL_2018.md
+  #   - Group Quarter: oeps/GroupQuar.md
+  #   - Hepatitis C rates: oeps/HepC_rate.md
+  #   - Historical 7-day Average Adjusted Case Count per 100K: oeps/COVID.md
+  #   - Homeless Population: oeps/HomelessPop.md
+  #   - Housing Occupancy Rate: oeps/Housing_2018.md
+  #   - Housing Unit Density: oeps/Housing_2018.md
+  #   - Housing Vacancy Rate: oeps/Housing_2018.md
+  #   - Hypersegregated Cities: oeps/Overlay.md
+  #   - Jail Incarceration Rates: oeps/Jail variables_2017.md
+  #   - Long Term Occupancy: oeps/Housing_2018.md
+  #   - Medicaid Expansion: oeps/MedExpan_2018.md
+  #   - Medicaid Expenditure: oeps/MedExp_2019.md
+  #   - Medical Marijuana Laws: oeps/MedMarijLaw.md
+  #   - Mobile Homes: oeps/Housing_2018.md
+  #   - Naloxone Access Laws: oeps/NAL_2017.md
+  #   - Native American Reservations: oeps/Overlay.md
+  #   - Per Capita Income: oeps/Economic_2018.md
+  #   - Physicians: oeps/Health_PCPs.md
+  #   - Population with a Disability: oeps/Other_Demographic_2018.md
+  #   - Poverty Rate: oeps/Economic_2018.md
+  #   - Prescription Drug Monitoring Programs (PDMP): oeps/PDMP_2017.md
+  #   - Prison Incarceration Rates: oeps/Prison variables_2016.md
+  #   - Race & Ethnicity: oeps/Race_Ethnicity_2018.md
+  #   - Rental Rates: oeps/Housing_2018.md
+  #   - Residential Segregation Indices: oeps/Residential_Seg_Indices.md
+  #   - Social Determinants of Health (SDOH): oeps/SDOH_2014.md
+  #   - Social Vulnerability Index (SVI): oeps/SVI_2018.md
+  #   - Southern Black Belt: oeps/Overlay.md
+  #   - State & Local Government Expenditures: oeps/PublicExpenditures.md
+  #   - Syringe Services Laws: oeps/Syringe.md
+  #   - Unemployment Rate: oeps/Economic_2018.md
+  #   - Urban/Suburban/Rural Classification: oeps/Rural_Urban_Classification_T_Z.md
+  #   - Veteran Population: oeps/VetPop.md
+  #   - Access to Opioid Treatment Programs: oeps/Access_OpioidUseTreatment.md
+  #   - Access to Substance Use Treatment Facilities: oeps/Access_SubstanceUseTreatment.md
+  # - Amerispeak Stigma Survey: stigma.md
 # theme:
 #   name: readthedocs
 #   include_sidebar: true
@@ -74,3 +74,4 @@ markdown_extensions:
 plugins:
   - search
   - mermaid2
+  - with-pdf
