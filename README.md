@@ -23,15 +23,14 @@ pip install jsonpath_ng
 
 ## Notes
 
+Now using frictionless so submission procedures will center around using this.
 
-Here is a list of things to add/edit for v1:
 
-1. Node property tables
-    - filter out irrelevant variables other than systemProperties variables
-    - if string,integer, or number type -- can be any of that type so add "Any " to the column (eg string --> Any string)
-    - create additional description for parent node properties or note at top
+1. Submission procedures
+    - overall updated submission procedures
+    - data dictionaries from schemas
 
-2. Overview of JDC data model/nodes/properties
+2. 
     - Diagram of how JDC works
     - link to JDC graph model
 
