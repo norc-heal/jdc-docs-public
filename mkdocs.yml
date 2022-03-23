@@ -65,8 +65,7 @@ nav:
   #   - Access to Substance Use Treatment Facilities: oeps/Access_SubstanceUseTreatment.md
   # - Amerispeak Stigma Survey: stigma.md
 # theme:
-#   name: readthedocs
-#   include_sidebar: true
+#   name: material
 use_directory_urls: true
 markdown_extensions:
     - toc:
@@ -74,4 +73,4 @@ markdown_extensions:
 plugins:
   - search
   - mermaid2
-  #- with-pdf
+  #- offline

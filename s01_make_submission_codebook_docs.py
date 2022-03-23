@@ -156,8 +156,8 @@ def get_section(field,first_level='custom',second_level='jcoin:core_measure_sect
         section = "Other"
     return section_md_template.format(section=section)
 
-baseline_schema_path = r"C:\Users\kranz-michael\projects\frictionless-jcoin\hubs\metadata\table_schemas\table-schema-baseline.json"
-timepoint_schema_path = r"C:\Users\kranz-michael\projects\frictionless-jcoin\hubs\metadata\table_schemas\table-schema-time-points.json"
+baseline_schema_path = r"C:\Users\kranz-michael\projects\phs-rcg\JCOIN_frictionless_dictionary\schemas\table-schema-baseline.yaml"
+timepoint_schema_path = r"C:\Users\kranz-michael\projects\phs-rcg\JCOIN_frictionless_dictionary\schemas\table-schema-time-points.yaml"
 schemas = [Schema(baseline_schema_path),Schema(timepoint_schema_path)]
 # Field Codebook
 for schema in schemas:

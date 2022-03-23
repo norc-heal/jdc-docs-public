@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://jcoin-docs-dev.io/submission/baseline_fields/" rel="canonical"/>
+<link href="../../img/favicon.ico" rel="shortcut icon"/>
+<title>Baseline Measure Fields - JCOIN Data Commons Documentation</title>
+<link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../css/font-awesome.min.css" rel="stylesheet"/>
+<link href="../../css/base.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" rel="stylesheet"/>
+<script defer="" src="../../js/jquery-1.10.2.min.js"></script>
+<script defer="" src="../../js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+<a class="navbar-brand" href="../..">JCOIN Data Commons Documentation</a>
+<!-- Expander button -->
+<button class="navbar-toggler" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<!-- Expanded navigation -->
+<div class="navbar-collapse collapse" id="navbar-collapse">
+<!-- Main navigation -->
+<ul class="nav navbar-nav">
+<li class="navitem">
+<a class="nav-link" href="../..">Home</a>
+</li>
+<li class="dropdown active">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Submission Procedures <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="../">Procedures</a>
+</li>
+<li>
+<a class="dropdown-item active" href="./">Baseline Measure Fields</a>
+</li>
+<li>
+<a class="dropdown-item" href="../time_point_fields/">Follow up measures (i.e., all time points) Fields</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="nav navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" data-target="#mkdocs_search_modal" data-toggle="modal" href="#">
+<i class="fa fa-search"></i> Search
+                            </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../" rel="prev">
+<i class="fa fa-arrow-left"></i> Previous
+                                </a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="../time_point_fields/" rel="next">
+                                    Next <i class="fa fa-arrow-right"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+<div class="navbar-header">
+<button class="navbar-toggler collapsed" data-target="#toc-collapse" data-toggle="collapse" title="Table of Contents" type="button">
+<span class="fa fa-angle-down"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse card bg-secondary" id="toc-collapse">
+<ul class="nav flex-column">
+<li class="nav-item" data-level="1"><a class="nav-link" href="#baseline-fields-measures-collected-only-at-baseline">Baseline Fields: Measures collected only at baseline</a>
+<ul class="nav flex-column">
+<li class="nav-item" data-level="2"><a class="nav-link" href="#record-and-linkage-fields">Record and linkage Fields</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#enrollment-fields">Enrollment Fields</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#demographics-fields">Demographics Fields</a>
+<ul class="nav flex-column">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></div>
+<div class="col-md-9" role="main">
+<h1 id="baseline-fields-measures-collected-only-at-baseline">Baseline Fields: Measures collected only at baseline<a class="headerlink" href="#baseline-fields-measures-collected-only-at-baseline" title="Permanent link">##</a></h1>
+<hr/>
+<h2 id="record-and-linkage-fields"><strong>Record and linkage Fields</strong><a class="headerlink" href="#record-and-linkage-fields" title="Permanent link">##</a></h2>
+<hr/>
+<hr/>
+<h3 id="jcoin-data-commons-person-identifier">Jcoin Data Commons Person Identifier<a class="headerlink" href="#jcoin-data-commons-person-identifier" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>jdc_person_id</code></p>
+<p><strong>Description:</strong> The generated unique identifier specific to the JCOIN Data Commons for a given individual (client or staff).</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Any of the fields type and other constraints</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h2 id="enrollment-fields"><strong>Enrollment Fields</strong><a class="headerlink" href="#enrollment-fields" title="Permanent link">##</a></h2>
+<hr/>
+<hr/>
+<h3 id="quarter-enrolled">Quarter Enrolled<a class="headerlink" href="#quarter-enrolled" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>quarter_enrolled</code></p>
+<p><strong>Description:</strong> The financial quarter and year of enrollment</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Any of the fields type and other constraints</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="state-of-site-for-enrollment">State Of Site For Enrollment<a class="headerlink" href="#state-of-site-for-enrollment" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>state_of_site_enrollment</code></p>
+<p><strong>Description:</strong> The U.S. State abbreviation of the site where client (participant) was initially enrolled</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Any of the fields type and other constraints</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="current-study-status">Current Study Status<a class="headerlink" href="#current-study-status" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>current_study_status</code></p>
+<p><strong>Description:</strong> A summary of the current status where client (participant) is in study</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> On study,Dropped out,Withdrawn by investigator,Completed study</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h2 id="demographics-fields"><strong>Demographics Fields</strong><a class="headerlink" href="#demographics-fields" title="Permanent link">##</a></h2>
+<hr/>
+<hr/>
+<h3 id="gender-identity">Gender Identity<a class="headerlink" href="#gender-identity" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>o2</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your gender identity?</p>
+<p><strong>Description:</strong> Gender identity</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Male,Female,Transgender man/trans man/female-to-male (FTM),Transgender woman/trans woman/male-to-female (MTF),Genderqueer/gender nonconforming/neither exclusively male nor female,Additional gender category (or other),Not reported</p>
+<p><strong>Required:</strong> Yes</p>
+<p><strong>Notes:</strong> For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]  False if not 'Male' and not 'Transfgender' else True</p>
+<hr/>
+<h3 id="gender-identity-condensed">Gender Identity (Condensed)<a class="headerlink" href="#gender-identity-condensed" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d4b</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your gender identity?</p>
+<p><strong>Description:</strong> A condensed version of the gender identity common data element</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Male,Female,Transgender,Gender nonconforming,Something else,Not reported</p>
+<p><strong>Required:</strong> Yes</p>
+<p><strong>Notes:</strong> For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]</p>
+<hr/>
+<h3 id="race-white">Race: White<a class="headerlink" href="#race-white" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_white</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> Denotes person with European, Middle Eastern, or North African ancestral origin who identifies, or is identified, as White.</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-black-or-african-american">Race: Black Or African American<a class="headerlink" href="#race-black-or-african-american" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_black</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> A person having origins in any of the Black racial groups of Africa. Terms such as "Haitian" or "Negro" can be used in addition to "Black or African American". (OMB)</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-american-indian-or-alaska-native">Race: American Indian Or Alaska Native<a class="headerlink" href="#race-american-indian-or-alaska-native" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_american_indian</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> Denotes a person having origins in one of the indigenous peoples of North America, who lived on the continent prior to the European colonization. The term includes individuals belonging to a large number of tribes, states, and ethnic groups, many of them still enduring as communities.</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-native-hawaiian-or-other-pacific-islander">Race: Native Hawaiian Or Other Pacific Islander<a class="headerlink" href="#race-native-hawaiian-or-other-pacific-islander" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_hawaiian</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> Denotes a person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. The term covers particularly people who identify themselves as part-Hawaiian, Native Hawaiian, Guamanian or Chamorro, Carolinian, Samoan, Chuukese (Trukese), Fijian, Kosraean, Melanesian, Micronesian, Northern Mariana Islander, Palauan, Papua New Guinean, Pohnpeian, Polynesian, Solomon Islander, Tahitian, Tokelauan, Tongan, Yapese, or Pacific Islander, not specified.</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-asian">Race: Asian<a class="headerlink" href="#race-asian" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_asian</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. (OMB)</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-other">Race: Other<a class="headerlink" href="#race-other" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_other</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> A person having origins in a race not identified with other racial categories presented</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-american-indian-principal-tribe-or-community-specified">Race: American Indian Principal Tribe Or Community Specified<a class="headerlink" href="#race-american-indian-principal-tribe-or-community-specified" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_specify_tribe</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> The specific principal tribe or community if the person answered answered 'yes' to this racial category</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Any of the fields type and other constraints</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="race-other-specified">Race: Other Specified<a class="headerlink" href="#race-other-specified" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d3_specify_other</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> What is your race? SELECT ALL THAT APPLY</p>
+<p><strong>Description:</strong> The specific racial category of a person having origins in a race not identified with other racial categories presented</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Any of the fields type and other constraints</p>
+<p><strong>Required:</strong> Yes</p>
+<hr/>
+<h3 id="hispanic-latino-or-spanish-origin">Hispanic, Latino, Or Spanish Origin<a class="headerlink" href="#hispanic-latino-or-spanish-origin" title="Permanent link">##</a></h3>
+<p><strong>Variable name:</strong> <code>d2</code></p>
+<p><strong>JCOIN Core Measure Question Text:</strong> Are you of Hispanic, Latino, or Spanish origin?</p>
+<p><strong>Description:</strong> A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin regardless of race</p>
+<p><strong>Variable type:</strong> String</p>
+<p><strong>Possible values:</strong> Yes,No,Unknown</p>
+<p><strong>Required:</strong> Yes</p></div>
+</div>
+</div>
+<footer class="col-md-12">
+<hr/>
+<p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+</footer>
+<script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+<script defer="" src="../../js/base.js"></script>
+<script defer="" src="../../search/main.js"></script>
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal" id="mkdocs_search_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="searchModalLabel">Search</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<p>From here you can search these documents. Enter your search terms below.</p>
+<form>
+<div class="form-group">
+<input class="form-control" id="mkdocs-search-query" placeholder="Search..." title="Type search term here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No results found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div><div aria-hidden="true" aria-labelledby="keyboardModalLabel" class="modal" id="mkdocs_keyboard_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+<table class="table">
+<thead>
+<tr>
+<th style="width: 20%;">Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="help shortcut"><kbd>?</kbd></td>
+<td>Open this help</td>
+</tr>
+<tr>
+<td class="next shortcut"><kbd>n</kbd></td>
+<td>Next page</td>
+</tr>
+<tr>
+<td class="prev shortcut"><kbd>p</kbd></td>
+<td>Previous page</td>
+</tr>
+<tr>
+<td class="search shortcut"><kbd>s</kbd></td>
+<td>Search</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

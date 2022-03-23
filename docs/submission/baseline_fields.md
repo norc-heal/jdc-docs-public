@@ -76,23 +76,22 @@
  ---------
 
  
-### Gender Identity 
+### Gender Identity
 
 
-**Variable name:** ```o2 ```
+**Variable name:** ```o2```
 
-**JCOIN Core Measure Question Text:** What is your gender identity? 
+**JCOIN Core Measure Question Text:** What is your gender identity?
 
-
-**Description:** Gender identity 
-
+**Description:** Gender identity
 
 **Variable type:** String
 
 **Possible values:** Male,Female,Transgender man/trans man/female-to-male (FTM),Transgender woman/trans woman/male-to-female (MTF),Genderqueer/gender nonconforming/neither exclusively male nor female,Additional gender category (or other),Not reported
 
-**Notes:** For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.] 
-False if not 'Male' and not 'Transfgender' else True
+**Required:** Yes
+
+**Notes:** For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]  False if not 'Male' and not 'Transfgender' else True
  ---------
 
  
@@ -101,17 +100,17 @@ False if not 'Male' and not 'Transfgender' else True
 
 **Variable name:** ```d4b```
 
-**JCOIN Core Measure Question Text:** What is your gender identity? 
+**JCOIN Core Measure Question Text:** What is your gender identity?
 
-
-**Description:** A condensed version of the gender identity common data element 
-
+**Description:** A condensed version of the gender identity common data element
 
 **Variable type:** String
 
 **Possible values:** Male,Female,Transgender,Gender nonconforming,Something else,Not reported
 
-**Notes:** For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.] 
+**Required:** Yes
+
+**Notes:** For gender/orientation/identity, use items O1-O2 if possible, otherwise use D4a-D4c.   [Must use one or the other.]
  ---------
 
  
@@ -122,9 +121,7 @@ False if not 'Male' and not 'Transfgender' else True
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
 
-
 **Description:** Denotes person with European, Middle Eastern, or North African ancestral origin who identifies, or is identified, as White.
-
 
 **Variable type:** String
 
@@ -140,7 +137,6 @@ False if not 'Male' and not 'Transfgender' else True
 **Variable name:** ```d3_black```
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
-
 
 **Description:** A person having origins in any of the Black racial groups of Africa. Terms such as "Haitian" or "Negro" can be used in addition to "Black or African American". (OMB)
 
@@ -159,9 +155,7 @@ False if not 'Male' and not 'Transfgender' else True
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
 
-
 **Description:** Denotes a person having origins in one of the indigenous peoples of North America, who lived on the continent prior to the European colonization. The term includes individuals belonging to a large number of tribes, states, and ethnic groups, many of them still enduring as communities.
-
 
 **Variable type:** String
 
@@ -178,9 +172,7 @@ False if not 'Male' and not 'Transfgender' else True
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
 
-
 **Description:** Denotes a person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands. The term covers particularly people who identify themselves as part-Hawaiian, Native Hawaiian, Guamanian or Chamorro, Carolinian, Samoan, Chuukese (Trukese), Fijian, Kosraean, Melanesian, Micronesian, Northern Mariana Islander, Palauan, Papua New Guinean, Pohnpeian, Polynesian, Solomon Islander, Tahitian, Tokelauan, Tongan, Yapese, or Pacific Islander, not specified.
-
 
 **Variable type:** String
 
@@ -196,7 +188,6 @@ False if not 'Male' and not 'Transfgender' else True
 **Variable name:** ```d3_asian```
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
-
 
 **Description:** A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. (OMB)
 
@@ -215,9 +206,7 @@ False if not 'Male' and not 'Transfgender' else True
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
 
-
 **Description:** A person having origins in a race not identified with other racial categories presented
-
 
 **Variable type:** String
 
@@ -234,9 +223,7 @@ False if not 'Male' and not 'Transfgender' else True
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
 
-
 **Description:** The specific principal tribe or community if the person answered answered 'yes' to this racial category
-
 
 **Variable type:** String
 
@@ -253,9 +240,7 @@ False if not 'Male' and not 'Transfgender' else True
 
 **JCOIN Core Measure Question Text:** What is your race? SELECT ALL THAT APPLY
 
-
 **Description:** The specific racial category of a person having origins in a race not identified with other racial categories presented
-
 
 **Variable type:** String
 
