@@ -103,6 +103,10 @@
 <ul class="nav flex-column">
 </ul>
 </li>
+<li class="nav-item" data-level="2"><a class="nav-link" href="#options-for-using-tools">Options for using tools</a>
+<ul class="nav flex-column">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -129,6 +133,7 @@ subgraph HUBS
    summary[Fill out the template file\ncontaining subgroup summaries];
    map["Map to baseline and time point data models:\n
       1. Replace local participant ids (PIDs) to MAARC-generated JDC ids
+      2. Shift date columns
       2. Rename variables and map variable values to data model (see data dictionary)"];
    validate["Validate datasets with jdc-utils tool"];
    individual_submit["Submit validated dataset to assigned storage location"];
@@ -152,14 +157,15 @@ subgraph MAARC
 end;
 </div>
 <h2 id="jdc-utils-command-line-tool">jdc-utils command line tool<a class="headerlink" href="#jdc-utils-command-line-tool" title="Permanent link">##</a></h2>
-<p>Contact <a href="kranz-michael@norc.org">Mike Kranz</a> for set up troubleshooting.</p>
+<p>Contact <a href="kranz-michael@norc.org">Mike Kranz</a> for set up and troubleshooting.</p>
 <h3 id="install-dependencies">Install dependencies<a class="headerlink" href="#install-dependencies" title="Permanent link">##</a></h3>
 <p>To use the tool, first. Note, if you already have a python, git installation,
-and virtual environment manager (ie virtualenv or conda), you're ready to go! If not, here's one way:</p>
+and virtual environment manager (ie virtualenv or conda), you're ready to go! Note, git is used to store the history of local ids and other </p>
+<p>If not, here's one way:</p>
 <ol>
 <li>Install latest version of python <a href="https://www.python.org/downloads/">here</a></li>
 <li>alternatively, one can install conda, preferably the miniconda version, <a href="https://docs.conda.io/en/latest/miniconda.html">here</a></li>
-<li>Install git </li>
+<li>Install git</li>
 <li>if using windows, <a href="https://gitforwindows.org/">use git for windows</a>. If using a mac, git comes pre-installed.</li>
 <li>Add git and python to your <code>PATH</code>.</li>
 <li>
@@ -181,79 +187,172 @@ and virtual environment manager (ie virtualenv or conda), you're ready to go! If
 <h3 id="setting-up-tool">Setting up tool<a class="headerlink" href="#setting-up-tool" title="Permanent link">##</a></h3>
 <ol>
 <li>Open a command prompt</li>
-<li>Create a git repository to store id mapping history (if applicable) </li>
-<li>TODO: <code>&lt;add command here&gt; or potentially expose with command line tool</code></li>
+<li>[this step will be in future hub onboarding] Create a git repository to store id mapping history (if applicable) </li>
+<li>Create a virtual environment with python utilities installed:</li>
+</ol>
+<p>If using conda:</p>
+<p><code>conda create -n jdc-utils pip</code></p>
+<ol>
 <li>Install jdc-utils tool</li>
 </ol>
-<p><code>pip install git+&lt;TO ADD GIT PATH&gt;</code></p>
+<p>While the location of the package will likely change, currently one can install with this command:</p>
+<p><code>pip install git+https://github.com/norc-heal/jdc-utilities.git</code></p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">##</a></h2>
-<p>TODO: add Usage CLI text</p>
-<pre><code>(jdc-utils) λ jdc-utils --help
-Usage: jdc-utils [OPTIONS] COMMAND [ARGS]...
+<p>The idea behind this version of the jdc utilities is three-fold. </p>
+<ol>
+<li>To provide tools to build a stand-alone data package (that includes metadata and data) via the frictionless framework and software suite of tools.</li>
+<li>To expose a command line interface to make these tools easier to use and easier to understand intermediate steps. For example, to see how 
+the replace id function has replaced ids, to compare the shifted to non shifted dates, and finally to view the transformed dataset that either passed
+validation (ie conformed to the given data model or did not). </li>
+<li>To provide tools to automatically go from this stand-alone (but harmonized) data package into the JDC data model for quick exploration of important variables.</li>
+</ol>
+<p>This workflow provides a scalable way to manage different hub data collection procedures and general enough that many of these elements can be generalized to other use cases. </p>
+<h2 id="options-for-using-tools">Options for using tools<a class="headerlink" href="#options-for-using-tools" title="Permanent link">##</a></h2>
+<p>There are several options to use these jdc utilities.</p>
+<ol>
+<li>Use these tools directly in python scripts.</li>
+<li>Use the command line interface with all the individual parameters.</li>
+<li>Use the command line interface with configuration files that store the input parameters.</li>
+</ol>
+<h3 id="replacing-local-ids-with-jdc-ids">Replacing local ids with JDC ids<a class="headerlink" href="#replacing-local-ids-with-jdc-ids" title="Permanent link">##</a></h3>
+<pre><code>C:\Users\kranz-michael\cmder
+(jdc-utils) λ jdc-utils replace-ids --help
+Usage: jdc-utils replace-ids [OPTIONS]
 
-  CLI for JDC utilities
+  This function is used to replace (and map) local ids assigned at the time
+  of data collection with separate ids generated by the DASC and given to
+  hubs.
+
+  Replacing local ids with JDC specific ideas reduces the risk of hub and
+  participant identification.
+
+  The mapped local to JDC ids are intended to be seen only by hub staff.
+
+  IN DEVELOPMENT: Additionally, this function accepts remote version control
+  history (ie git repo) to save previous versions.
 
 Options:
-  --help  Show this message and exit.
+  --file-path TEXT    Path to a file with locals/old ids to be replaced. Can
+                      specify multiple files if need to replace ids across
+                      multiple files
 
-Commands:
-  replace-ids
-  transform
-  validate
-  ```
+  --id-file TEXT      Path to where the generated ids (created by the MAARC
+                      and distributed to hubs) exist
 
+  --map-file TEXT     Path to csv where the id mappings are stored -- this
+                      will be generated if file does not exist
 
-### Replacing local ids with JDC ids
+  --map-url TEXT      Git bare repo set up -- ie the "remote url" for sharing
+                      mapped ids
 
-TODO: add examples/instructions/Usage CLI text
+  --column TEXT       Name of column across files specified with old (or
+                      local) ids.     If none specified, defaults to first
+                      level (ie 0) pandas dataframe index
 
-
-</code></pre>
-<p>(jdc-utils) λ jdc-utils replace-ids --help</p>
-<p>Usage: jdc-utils replace-ids [OPTIONS]</p>
-<p>Options:
-  --file-path TEXT  Path to a file with locals/old ids to be replaced. Can
-                    specify multiple files if need to replace ids across
-                    multiple files  [required]</p>
-<p>--id-file TEXT    path to csv where the id mappings are stored -- this will
-                    be generated if file does not exist  [required]</p>
-<p>--map-file TEXT   Path to where the git repository supporting the versioning
-  --map-url TEXT    Git bare repo set up -- ie the "remote url" for sharing
-                    mapped ids</p>
-<p>--column TEXT     Name of column across files specified with old (or local)
-                    ids. If none specified, defaults to first level (ie 0)
-                    pandas dataframe index</p>
-<p>--help            Show this message and exit.</p>
-<pre><code>
-### Transformation utility for harmonizing datasets to data models
-
-TODO: add examples/instructions/Usage CLI text
+  --config-file TEXT  A configuration file containing all required replace-id
+                      fields
 
 </code></pre>
-<p>(jdc-utils) λ jdc-utils transform --help</p>
-<p>Usage: jdc-utils transform [OPTIONS]</p>
-<p>Options:
+<h3 id="shifting-dates">Shifting dates<a class="headerlink" href="#shifting-dates" title="Permanent link">##</a></h3>
+<pre><code>(jdc-utils) λ jdc-utils shift-dates --help
+Usage: jdc-utils shift-dates [OPTIONS]
+
+  This function takes a specified date field and shifts them around a
+  specified number of days (ie shift amount). This shifted amount is
+  selected randomly within an interval of the previous 182 days and next 182
+  days. This shift amount is fixed within each individual such that the
+  intervals between dates are retained to provide the  capability to
+  calculate derived variables such as days from a given visit/timepoint
+  (e.g., days from baseline or  days from release).
+
+  As with the replace id function, the mappings (i.e., id to the random # of
+  days shifted) is stored in a separate file to reduce deductive disclosure
+  risk from PII linkage with date variables.
+
+  However, by storing this shift amount (rather than randomly shifting at
+  each data update,  the exact dates can be recovered simply by subtracting
+  this added random amount to the shifted date.
+
+  IN DEVELOPMENT: Additionally, this function accepts remote version control
+  history (ie git repo) to save previous versions.
+
+Options:
+  --file-path TEXT    Path to a file with dates to be shifted. Can specify
+                      multiple files if column name is the same across files
+
+  --map-file TEXT     path to csv where the id mappings are stored -- this
+                      will be generated if file does not exist
+
+  --map-url TEXT      Git bare repo set up -- ie the "remote url" for sharing
+                      mapped ids (optional)
+
+  --id-column TEXT    Name of column across files specified ids.
+  --date-column TEXT  Name of date column(s) to be shifted
+  --config-file TEXT  A configuration file containing all required shift date
+
+</code></pre>
+<h3 id="transformation-utility-for-harmonizing-datasets-to-data-models">Transformation utility for harmonizing datasets to data models<a class="headerlink" href="#transformation-utility-for-harmonizing-datasets-to-data-models" title="Permanent link">##</a></h3>
+<p>Transforming data currently leverages functions written with pandas and pandas-flavor decorator.</p>
+<p>It is a simple two step process:</p>
+<ol>
+<li>Read in data file to a data frame<ul>
+<li><code>transforms.read_df(filepath)</code> function from specified data file path </li>
+</ul>
+</li>
+<li>Transform data frame to JDC properties and values<ul>
+<li><code>transforms.run_transformfile(df,transformfile)</code> function from the transform functions specified in a transforms.yaml file (which itself is specified in the config.yaml file) on the dataframe</li>
+</ul>
+</li>
+</ol>
+<pre><code>(jdc-utils) λ jdc-utils transform --help
+Usage: jdc-utils transform [OPTIONS]
+
+The transform function runs through a series of transforms (eg renaming )
+
+Options:
   --transform-file TEXT  Path to the given transform file
-  --file-path TEXT       Path to the given file
-  --help                 Show this message and exit.</p>
-<pre><code>
-### Validating your harmonized dataset
-
-TODO: add examples/instructions/Usage CLI text
+  --file-path TEXT       Path to the given dataset file
+  --help                 Show this message and exit.
 
 </code></pre>
-<p>(jdc-utils) λ jdc-utils validate --help
-Usage: jdc-utils validate [OPTIONS]</p>
-<p>Options:
+<p>This transformfile contains a way to specify transforms within a simple text file called a "yaml" file:</p>
+<p>Specifies the function, paramater name and parameter input
+to be run on input data in a yaml file:</p>
+<pre><code class="language-yaml">&lt;name of registered/valid pandas function&gt;:
+    &lt;name of function parameter&gt;: &lt;paramter input (this may be a string, list, or dictionary)&gt;
+</code></pre>
+<p>Examples:</p>
+<p>Example native pandas functions :</p>
+<p><em>Rename columns:</em></p>
+<pre><code class="language-yaml">rename:
+    columns:
+        d4_b: gender
+        record_id: submitter_id
+</code></pre>
+<p>is intended to run:</p>
+<pre><code class="language-python">df.rename(columns={
+    'd4_b':'gender',
+    'record_id':'submitter_id'
+})
+
+</code></pre>
+<h3 id="validating-your-harmonized-dataset">Validating your harmonized dataset<a class="headerlink" href="#validating-your-harmonized-dataset" title="Permanent link">##</a></h3>
+<p>The validate command uses frictionless table schema to validate the table
+and give useful feedback in terms of what needs to be transformed.</p>
+<p>If it it passes, then the dataset will be saved and ready for submission.</p>
+<pre><code>(jdc-utils) λ jdc-utils validate --help
+Usage: jdc-utils validate [OPTIONS]
+
+Options:
   --schema-path TEXT              Frictionless table schema JSON or YAML file
-                                  path</p>
-<p>--file-path TEXT                Path to a file. Can specify multiple files
-                                  if fields span multiple files</p>
-<p>--file-type [baseline|time-points]
+                                  path
+
+  --file-path TEXT                Path to dataset file(s)
+  --file-type [baseline|time-points]
                                   Type of file(s). Currently either baseline
-                                  or time-points</p>
-<p>--help                          Show this message and exit.
-```</p></div>
+                                  or time-points
+
+</code></pre></div>
 </div>
 </div>
 <footer class="col-md-12">
