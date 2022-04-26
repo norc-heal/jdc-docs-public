@@ -20,9 +20,9 @@ JCOIN Data Commons (JDC) is a system built on the Gen3 software platform develop
 
 Click on each link below to find out more:
 
-- [Current hub data, submission procedures, and tools](submission)
-- [Opioid Environment Policy Scan (OEPS) data warehouse](oeps)
-- [Amerispeak Stigma Survey](stigma)
+- Current hub data, submission procedures, and tools (currently only available to hub personnel with permissions)
+- [About JDC data and FAQs](data/data.md)
+- [Future development](future/todos.md)
 
 
 ## Future development
