@@ -23,9 +23,4 @@ Click on each link below to find out more:
 - Current hub data, submission procedures, and tools (currently only available to hub personnel with permissions)
 - [About JDC data and FAQs](data/data.md)
 - [Future development](future/todos.md)
-
-
-## Future development
-- Development of JDC user documentation
-- An interactive page listing study-level information and access restrictions
-- ....
+- [Hub Core Measure Submissions and Codebooks](submission/submission_public.md)
