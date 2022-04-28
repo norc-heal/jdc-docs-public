@@ -8,7 +8,7 @@ individual identifiers and randomly shifting dates) are performed and then the d
 
 Access restrictions: Restricted -- Need to request access
 
-## Changes in Opioid Use Disorder Stigma
+## Amerispeak Surveys: Opioid Use Disorder Stigma
 
 Tracking changes in stigma associated with OUD is important, for as stigma intensifies over time it might make it more difficult to find positive treatment effects in JCOIN. Given the critical importance of public opinion towards policy making and approaches used in the justice system, this project will measure public support for OUD treatment in the general public, assess stigma associated with OUD, and perceptions of criminality around OUD. 
 

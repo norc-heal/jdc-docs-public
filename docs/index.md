@@ -20,7 +20,11 @@ JCOIN Data Commons (JDC) is a system built on the Gen3 software platform develop
 
 Click on each link below to find out more:
 
-- Current hub data, submission procedures, and tools (currently only available to hub personnel with permissions)
-- [About JDC data and FAQs](data/data.md)
-- [Future development](future/todos.md)
-- [Hub Core Measure Submissions and Codebooks](submission/submission_public.md)
+IN DEVELOPMENT
+{::comment}
+ Detailed information on current hub data, submission procedures, and tools (currently only available to hub personnel with permissions) -- in development
+- [Submissions process summay](submission/submission_public.md)
+- [Core measures](submission/submission_public.md#hub-data-core-measures)
+- [Selected list of data and permission restrictions](data/data.md)
+- [Future development](future/todos.md) 
+{:/comment}
