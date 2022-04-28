@@ -1,6 +1,12 @@
 # Data in the JDC
 
+IN DEVELOPMENT
+
+A brief list of available datasets and their permissions.
+
 ## Hub Core Measures
+
+IN DEVELOPMENT 
 
 Standardizing (ie harmonizing) a series of core domains via survey questions collected across hubs to support standardized reporting and
 data sharing.  PII removal and additional de-identification steps (i.e., using JDC specific 

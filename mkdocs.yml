@@ -3,11 +3,6 @@ site_name: JCOIN Data Commons Documentation
 site_url: https://norc-heal.github.io/jdc-docs-public
 nav:
   - About the JDC: ./index.md
-  #- Data in the JDC: data/data.md
-  #- Data submission process: submission/submission_public.md
-  #- Hub Core Measure Codebooks:
-  # - Baseline: submission/baseline_fields.md
-  #- Time-point (baseline + follow up): submission/time_point_fields.md
   - Future development: future/todos.md
 use_directory_urls: true
 markdown_extensions:
