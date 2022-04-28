@@ -18,6 +18,7 @@ JCOIN Data Commons (JDC) is a system built on the Gen3 software platform develop
 While user documentation specific to the JDC is forthcoming, these links are useful for navigating the JDC:
 
 [Accessing data](https://gen3.org/resources/user/access-data/)
+
 [Analyzing data](https://gen3.org/resources/user/analyze-data/)
 
 
